@@ -19,7 +19,7 @@ function remove(id,className){
 }
 
 function toggle(element){
-    if(element.style.display=='none' || element.style.display==''){
+    if(element.style.display=='none' || element.style.display===''){
         element.style.display='block';
     }else if(element.style.display=='block'){
         element.style.display='none';
@@ -67,14 +67,15 @@ remove(null,'action-btn-base');
 remove('interviewed-div',null);
 remove(null,'site-footer');
 remove(null,'notepad-wrapper');
-remove(null,'tab-view');
+//remove(null,'tab-view');
 remove(null,'theme-select');
 remove(null,'reset-btn');
 remove(null,'contribute-btn');
 
-document.getElementsByName("lang")[0].selectedIndex=1;
-document.getElementsByName("lang")[0].style.display = 'none';
-
+if(document.getElementsByName("lang").length>0){
+    document.getElementsByName("lang")[0].selectedIndex=1;
+    document.getElementsByName("lang")[0].style.display = 'none';
+}
 createButtonForToggle('action','3');
 createButtonForToggle('control-btn-bar','2');
 createButtonForToggle('question-detail-container','1');
